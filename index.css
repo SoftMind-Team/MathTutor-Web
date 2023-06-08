@@ -1,38 +1,129 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-.navbar li, a, button{
+
+body{
+    background-color: #0c0c0c !important;
+}
+
+.navbar li, button{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     /* 22px */
-    font-size: 36px;
+    font-size: 24px;
     #color: #ccd6f6;
     text-decoration: none;
     display: inline-block;
-
-
-    padding: 10px 20px;
-    list-style: none;
-    transition: all 0.3s ease 0s;
-}
-
-.navbar li a:hover{
-    color: #ffffff;
-}
-
-.main-navbar{
-    margin-left: auto;
-}
-
-.secondary-navbar{
-    margin-right: auto;
-}
-
-header{
-    /* flex-start or flex-end */
-    /*
-    display: flex;
     justify-content: center;
     align-items: center;
-    */
-    padding: 30px 10%;
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+    padding: 5px 20px;
+    list-style: none;
+    transition: all 0.3s ease 0s;
+    color: white;
+}
+
+.navbar li:hover, button:hover{
+    padding: 7px 20px;
+    background: indigo;
+
+    border: solid white;
+}
+
+.navbar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1%;
+}
+
+.navbar button{
+    padding: 0;
+    border: none;
+    background: none;
+}
+/*
+1100px poprawnie git w miare
+ */
+@media(min-width: 100px) {
+    header{
+        /* flex-start or flex-end */
+        /*
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(238,174,202, 0.3);
+        background:
+                radial-gradient(circle, rgba(238,174,202,0.9) 0%, rgba(148,187,233,0.5) 100%);
+        */
+        padding: 10px 5% 5px 5%;
+    }
+
+    .courses-dropdown{
+        background: red;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    .dropdown-content{
+        position: absolute;
+        left: 0;
+        top: calc(100% + .25rem);
+
+        background-color: indigo;
+        border-radius: 20px;
+
+        padding: .75rem;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+
+        opacity: 0;
+        pointer-events: none;
+        transform:  translateY(-10px);
+        transition: opacity 150ms ease-in-out;
+    }
+
+    .courses-dropdown.active > .link + .dropdown-content{
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .courses-grid{
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        gap: 2rem;
+    }
+
+    .dropdown-links{
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+    }
+
+    .dropdown-links a, a:hover, a:visited, a:active, a:visited {
+        text-decoration: none !important;
+        color: inherit;
+    }
+
+    .cart{
+        background: red;
+        border-radius: 100px;
+    }
+
+    .login{
+        color: white;
+        background: dodgerblue;
+        border-radius: 20px;
+    }
+
+    .profil{
+        background: darkorchid;
+        border-radius: 20px;
+    }
+
+    .formulas{
+        background: darkorchid;
+        border-radius: 20px;
+    }
 }
